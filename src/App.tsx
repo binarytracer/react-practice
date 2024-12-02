@@ -1,35 +1,42 @@
-import React from "react";
-import logoImg from "./assets/logo.svg";
+import React, { useState } from "react";
 import "./App.css";
-
-const descriptions = ["Fundamental", "Core", "Amazing"];
-
-function getRandomDescription() {
-  const randomIndex =
-    Math.floor((Math.random() * 1000) % descriptions.length) + 1;
-  return descriptions[randomIndex];
-}
-
-function Header() {
-  const description = getRandomDescription();
-
-  return (
-    <header>
-      <img src={logoImg} className="App-logo" alt="logo" />
-      <h1>React Essentials</h1>
-      <p>
-        {description} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
+import CoreConcept from "./components/CoreConcepts";
+import Header from "./components/Header";
+import { CORE_CONCEPTS } from "./data";
+import TabButton from "./components/TabButton";
 
 function App() {
+  const [firstConcept] = CORE_CONCEPTS;
+  const [selectedContent, selectContent] = useState(firstConcept.description);
+
+  function handleSelect(description: string) {
+    selectContent(description);
+  }
+
   return (
     <div className="App">
       <Header />
-      <main>Lets do this.</main>
+      <main>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul className="core-concepts">
+            {CORE_CONCEPTS.map((concept) => (
+              <CoreConcept {...concept} />
+            ))}
+          </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            {CORE_CONCEPTS.map((concept) => (
+              <TabButton onSelect={() => handleSelect(concept.description)}>
+                {concept.title}
+              </TabButton>
+            ))}
+          </menu>
+          {selectedContent}
+        </section>
+      </main>
     </div>
   );
 }
