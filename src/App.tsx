@@ -6,11 +6,10 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/TabButton";
 
 function App() {
-  const [firstConcept] = CORE_CONCEPTS;
-  const [selectedContent, selectContent] = useState(firstConcept.description);
+  const [contentIndex, setContentIndex] = useState<number>();
 
-  function handleSelect(description: string) {
-    selectContent(description);
+  function handleSelect(contentIndex: number) {
+    setContentIndex(contentIndex);
   }
 
   return (
@@ -20,21 +19,34 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul className="core-concepts">
-            {CORE_CONCEPTS.map((concept) => (
-              <CoreConcept {...concept} />
+            {CORE_CONCEPTS.map((concept, index) => (
+              <CoreConcept key={index} {...concept} />
             ))}
           </ul>
         </section>
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            {CORE_CONCEPTS.map((concept) => (
-              <TabButton onSelect={() => handleSelect(concept.description)}>
+            {CORE_CONCEPTS.map((concept, index) => (
+              <TabButton
+                isSelected={contentIndex === index}
+                key={index}
+                onSelect={() => handleSelect(index)}
+              >
                 {concept.title}
               </TabButton>
             ))}
           </menu>
-          {selectedContent}
+          {contentIndex === undefined && <p>Please select a topic</p>}
+          {contentIndex !== undefined && (
+            <div id="tab-content">
+              <h3>{CORE_CONCEPTS[contentIndex].title}</h3>
+              <p>{CORE_CONCEPTS[contentIndex].description}</p>
+              <pre>
+                <code>{CORE_CONCEPTS[contentIndex].code}</code>
+              </pre>
+            </div>
+          )}
         </section>
       </main>
     </div>
