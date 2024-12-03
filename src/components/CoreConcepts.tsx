@@ -1,19 +1,17 @@
-interface CoreConceptProps {
-  title: string;
-  description?: string;
-  image?: string;
-}
+import { CORE_CONCEPTS } from "../data";
+import CoreConcept from "./CoreConcept";
 
-function CoreConcept(props: CoreConceptProps) {
-  const { title, description, image } = props;
-
+function CoreConcepts() {
   return (
-    <li>
-      <img src={image} alt={description} />
-      <h3>{title}</h3>
-      Description: {description} <br />
-    </li>
+    <section id="core-concepts">
+      <h2>Core Concepts</h2>
+      <ul className="core-concepts">
+        {CORE_CONCEPTS.map((concept, index) => (
+          <CoreConcept key={index} {...concept} />
+        ))}
+      </ul>
+    </section>
   );
 }
 
-export default CoreConcept;
+export default CoreConcepts;
