@@ -8,6 +8,8 @@
 
 - **React 18** with TypeScript
 - **Vite** — Fast dev server & build tool
+- **React Router** — Client-side routing
+- **TanStack Query** — Data fetching & caching
 - **Vitest** — Unit testing
 - **ESLint** — Code linting
 
@@ -36,13 +38,23 @@ npm run dev
 
 ```
 src/
-├── components/     # React components
+├── components/     # Reusable UI components
+├── pages/          # Route page components
 ├── assets/         # Images and static files
 ├── data.ts         # Core concepts data
 ├── main.tsx        # App entry point
-├── App.tsx         # Root component
+├── App.tsx         # Root component with routes
 └── App.test.tsx    # Tests
 ```
+
+## Routes
+
+| Path | Page | Description |
+|------|------|-------------|
+| `/` | Home | Core concepts overview |
+| `/concept/:slug` | ConceptDetail | Individual concept details |
+| `/playground` | Playground | Interactive examples |
+| `/profile` | Profile | User profile |
 
 ## CI/CD
 
