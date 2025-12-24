@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CoreConcept as CoreConceptType } from "../data";
 
 function CoreConcept(props: CoreConceptType) {
@@ -5,9 +6,11 @@ function CoreConcept(props: CoreConceptType) {
 
   return (
     <li>
-      <img src={image} alt={description} />
-      <h3>{title}</h3>
-      Description: {description} <br />
+      <Link to={`/concept/${title.toLowerCase()}`}>
+        <img src={image} alt={description} />
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </Link>
     </li>
   );
 }

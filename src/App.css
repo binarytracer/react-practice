@@ -1,9 +1,168 @@
+/* Core Concepts Grid */
 ul.core-concepts {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 ul.core-concepts li {
-    padding-bottom: 10px;
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+ul.core-concepts li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+ul.core-concepts li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+ul.core-concepts li img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+ul.core-concepts li h3 {
+  margin: 0 0 0.5rem;
+  color: #00d4ff;
+}
+
+ul.core-concepts li p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #a0a0a0;
+}
+
+/* Navigation */
+nav {
+  display: inline-flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+nav a {
+  color: #00d4ff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #00d4ff;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background: #00d4ff;
+  color: #0a0a0a;
+}
+
+/* Back Link */
+.back-link {
+  display: inline-block;
+  color: #00d4ff;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Concept Detail Page */
+.concept-detail {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.concept-detail article {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.concept-detail img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+
+.concept-detail h1 {
+  color: #00d4ff;
+  margin: 0 0 1rem;
+}
+
+.concept-detail p {
+  color: #c0c0c0;
+  line-height: 1.6;
+}
+
+/* Playground Page */
+.playground {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.playground h1 {
+  color: #00d4ff;
+}
+
+.playground-section {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.playground-section h2 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.playground-section button {
+  background: #00d4ff;
+  color: #0a0a0a;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.playground-section button:hover {
+  opacity: 0.8;
+}
+
+.playground-section button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.playground-section .fact {
+  background: #0a0a0a;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.playground-section .error {
+  color: #ff6b6b;
 }

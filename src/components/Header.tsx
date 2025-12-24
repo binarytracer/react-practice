@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import reactCoreConceptsImg from "../assets/react-core-concepts.png";
 
 const descriptions = ["Fundamental", "Core", "Amazing"];
@@ -18,6 +19,11 @@ export default function Header() {
         {description} React concepts you will need for almost any app you are
         going to build!
       </p>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/playground">Playground</Link>
+        <Link to="/profile">Profile</Link>
+      </nav>
     </header>
   );
 }
