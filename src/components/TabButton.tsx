@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 
 interface TabButtonProps {
   children?: ReactNode;
-  onClick?: (selectedButton: any) => void;
+  onClick?: () => void;
   isSelected: boolean;
 }
 

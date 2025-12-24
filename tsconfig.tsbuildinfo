@@ -1,0 +1,1 @@
+{"root":["./src/App.test.tsx","./src/App.tsx","./src/data.ts","./src/main.tsx","./src/setupTests.ts","./src/vite-env.d.ts","./src/components/CoreConcept.tsx","./src/components/CoreConcepts.tsx","./src/components/Examples.tsx","./src/components/Header.tsx","./src/components/Section.tsx","./src/components/TabButton.tsx","./src/components/Tabs.tsx"],"version":"5.9.3"}

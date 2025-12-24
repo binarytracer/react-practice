@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 interface TabsProps {
   children?: ReactNode;
   buttons?: ReactNode;
-  ButtonsContainer?: React.FC<any> | string;
+  ButtonsContainer?: React.ElementType;
 }
 
 export default function Tabs(props: TabsProps) {

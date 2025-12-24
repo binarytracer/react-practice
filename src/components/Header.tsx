@@ -3,8 +3,7 @@ import reactCoreConceptsImg from "../assets/react-core-concepts.png";
 const descriptions = ["Fundamental", "Core", "Amazing"];
 
 function getRandomDescription() {
-  const randomIndex =
-    Math.floor((Math.random() * 1000) % descriptions.length) + 1;
+  const randomIndex = Math.floor(Math.random() * descriptions.length);
   return descriptions[randomIndex];
 }
 

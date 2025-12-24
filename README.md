@@ -1,30 +1,53 @@
-# Practice React App
+# React Essentials
 
-> Serves as a practice repo while completing the [Udemy Course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
+> A practice repo for learning core React concepts, built while completing the [Udemy Course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech Stack
+
+- **React 18** with TypeScript
+- **Vite** — Fast dev server & build tool
+- **Vitest** — Unit testing
+- **ESLint** — Code linting
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server (http://localhost:3000)
+npm run dev
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm test` | Run tests once |
+| `npm run test:watch` | Run tests in watch mode |
+| `npm run lint` | Run ESLint |
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+src/
+├── components/     # React components
+├── assets/         # Images and static files
+├── data.ts         # Core concepts data
+├── main.tsx        # App entry point
+├── App.tsx         # Root component
+└── App.test.tsx    # Tests
+```
 
-The page will reload if you make edits.You will also see any lint errors in the console.
+## CI/CD
 
-### `npm test`
+This project uses GitHub Actions for continuous integration:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Lint** — Runs ESLint on all TypeScript files
+- **Test** — Runs Vitest test suite
+- **Build** — Builds production bundle (only after lint & test pass)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Triggered on pushes and pull requests to `main`/`master`.

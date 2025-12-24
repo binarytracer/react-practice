@@ -1,10 +1,6 @@
-interface CoreConceptProps {
-  title: string;
-  description?: string;
-  image?: string;
-}
+import { CoreConcept as CoreConceptType } from "../data";
 
-function CoreConcept(props: CoreConceptProps) {
+function CoreConcept(props: CoreConceptType) {
   const { title, description, image } = props;
 
   return (
