@@ -1,17 +1,18 @@
-import "./App.css";
-import Header from "./components/Header";
-import CoreConcepts from "./components/CoreConcepts";
-import { Examples } from "./components/Examples";
+import { Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
+import ConceptDetail from './pages/ConceptDetail';
+import Playground from './pages/Playground';
+import Profile from './pages/Profile';
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <CoreConcepts />
-        <Examples />
-      </main>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/concept/:slug" element={<ConceptDetail />} />
+      <Route path="/playground" element={<Playground />} />
+      <Route path="/profile" element={<Profile />} />
+    </Routes>
   );
 }
 
