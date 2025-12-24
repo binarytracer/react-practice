@@ -2,6 +2,8 @@
 
 > A practice repo for learning core React concepts, built while completing the [Udemy Course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
+**🚀 Live Demo:** [react-practice-eosin-sigma.vercel.app](https://react-practice-eosin-sigma.vercel.app/)
+
 ## Tech Stack
 
 - **React 18** with TypeScript
